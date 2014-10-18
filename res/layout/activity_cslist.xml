@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_bitmap" >
+    
+	<!-- 导航 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- 账单 -->
+        <Button android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Nav_zdBt"
+            android:gravity="center"
+            android:textColor="#6a1210"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/nav_bt_selector_bg"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:text="账单"
+            ></Button>
+        <!-- 上传 -->
+        <Button android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Nav_scBt"
+            android:gravity="center"
+            android:textColor="#63106a"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/nav_bt_selector_bg"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:text="数据"
+            ></Button>
+        <!-- 参数 -->
+        <Button android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Nav_csBt"
+            android:gravity="center"
+            android:textColor="#14106a"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/nav_bt_press_bg"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:text="参数"
+            android:visibility="visible"
+            android:enabled="false"></Button>
+        <!-- 算账-->
+        <Button android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Nav_szBt"
+            android:gravity="center"
+            android:textColor="#106a5c"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/nav_bt_selector_bg"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:text="算账"></Button>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+       	android:layout_weight="1"
+       	android:background="@drawable/corners_white_bg"
+       	android:layout_marginTop="5dp"
+       	android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+    <!-- 无记录提示 -->
+    <TextView
+            android:id="@+id/cslistAy_noNotifyTv"            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center"
+            android:textSize="14sp"
+            android:text="还没有参数，赶快去添加吧"
+            android:drawableTop="@drawable/not_found"
+            android:visibility="gone"/>
+    <!-- 参数列表 -->
+    <ListView android:layout_width="match_parent"
+        android:layout_height="0dp"
+       	android:layout_weight="1"
+       	android:id="@+id/cslistAy_csListLv"
+       	></ListView>
+</LinearLayout>
+
+    <!-- 操作按钮组 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- 添加 -->
+        <Button android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/cslistAy_tjBt"
+            android:text="添加"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/tj_bt_selector_bg"></Button>
+    </LinearLayout>
+</LinearLayout>

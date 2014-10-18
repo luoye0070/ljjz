@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:descendantFocusability="blocksDescendants">
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/zdLi_je"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#F61314"
+            android:textSize="24sp"
+            android:text="￥12.80"/>
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/zdLi_rq"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#387F00"
+            android:textSize="18sp"
+            android:text="2014年09月12日"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/zdLi_yt"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#526DA5"
+            android:textSize="18sp"
+            android:text="买菜"/>
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/zdLi_fkr"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#E100E1"
+            android:textSize="18sp"
+            android:text="刘兆国"/>
+    </LinearLayout>
+    
+    <!-- 用钱人 -->
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!-- <TextView android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="用钱人："/> -->
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/zdLi_yqr"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#FF8040"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:text="刘兆国,曹真"/>
+        <Button android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text=""
+        android:id="@+id/zdLi_scBt"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/del_bt_bg"
+        android:layout_margin="10dp"/>
+    </LinearLayout>
+    
+</LinearLayout>
