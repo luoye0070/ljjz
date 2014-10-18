@@ -4,9 +4,13 @@ import com.lj.jz.data.YongHu;
 import com.lj.jz.data.YongHuDao;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -130,6 +134,41 @@ public class UserActivity extends Activity {
 				UserActivity.this.finish();
 			}
 		});
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if(item.getItemId()==R.id.action_exit){//退出
+			AlertDialog.Builder dialog=new AlertDialog.Builder(UserActivity.this);
+			dialog.setTitle("退出");
+			dialog.setMessage("确定要退出吗？");
+			dialog.setNegativeButton("取消", null);
+			dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					UserActivity.this.finish();
+					Intent intent=new Intent();
+					intent.setClass(getApplicationContext(), MakeBackupService.class);
+					startService(intent);
+				}
+			});
+			dialog.show();
+		    return true;
+		}
+		if(item.getItemId()==R.id.action_help){//打开帮助界面
+			Intent intent=new Intent();
+			intent.setClass(UserActivity.this, HelpActivity.class);
+			startActivity(intent);
+		}
+		return super.onOptionsItemSelected(item);
 	}
 	
 }
