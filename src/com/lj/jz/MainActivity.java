@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.text.SpannableString;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -308,7 +309,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 	@Override
@@ -335,4 +336,33 @@ public class MainActivity extends Activity {
 		}		
 		return super.onKeyDown(keyCode, event);
 	}
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if(item.getItemId()==R.id.action_exit){//退出
+			AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity.this);
+			dialog.setTitle("退出");
+			dialog.setMessage("确定要退出吗？");
+			dialog.setNegativeButton("取消", null);
+			dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					MainActivity.this.finish();
+					Intent intent=new Intent();
+					intent.setClass(getApplicationContext(), MakeBackupService.class);
+					startService(intent);
+				}
+			});
+			dialog.show();
+		    return true;
+		}
+		if(item.getItemId()==R.id.action_help){//打开帮助界面
+			Intent intent=new Intent();
+			intent.setClass(MainActivity.this, HelpActivity.class);
+			startActivity(intent);
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
 }

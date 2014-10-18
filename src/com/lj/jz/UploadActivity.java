@@ -37,6 +37,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -716,14 +717,14 @@ public class UploadActivity extends Activity {
 			ArrayList<ZhangDan> zdList = new ArrayList<ZhangDan>();
 			ZhangDanDao zdd = new ZhangDanDao(getApplicationContext());
 			int totalCount = zdd.findAllByStatus(zdList, 1);
-			int count = zdList.size();
-			writeLog("发送记录条数：" + count, 1);
+			int count = zdList.size();			
 			boolean isOk = socketHelper.send(count + "");
 			System.out.println(isOk);
 			if (!isOk) {
 				writeLog("发送记录条数失败");
 				return;
 			}
+			writeLog("将上传账单条数：" + count, 1);
 			for (int i = 0; i < count; i++) {
 				// System.out.print("消息"+i+":");
 				ZhangDan zd = zdList.get(i);
@@ -790,7 +791,7 @@ public class UploadActivity extends Activity {
 				countFromServer = Integer.parseInt(count_str);
 			} catch (Exception ex) {
 			}
-			writeLog("下载的参数数量：" + countFromServer, 1);
+			writeLog("将要下载的参数数量：" + countFromServer, 1);
 			// System.out.println(count);
 			CanShuDao csd = new CanShuDao(getApplicationContext());
 			int count=0;
@@ -824,7 +825,7 @@ public class UploadActivity extends Activity {
 			if(count>0){
 				csd.writeBack();
 			}
-			writeLog("下载参数完成!", 1);
+			writeLog("下载参数完成，共写入参数"+count+"条！", 1);
 			socketHelper.close();
 		}
 	}
@@ -893,4 +894,34 @@ public class UploadActivity extends Activity {
 		}
 		super.onDestroy();
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if(item.getItemId()==R.id.action_exit){//退出
+			AlertDialog.Builder dialog=new AlertDialog.Builder(UploadActivity.this);
+			dialog.setTitle("退出");
+			dialog.setMessage("确定要退出吗？");
+			dialog.setNegativeButton("取消", null);
+			dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					UploadActivity.this.finish();
+					Intent intent=new Intent();
+					intent.setClass(getApplicationContext(), MakeBackupService.class);
+					startService(intent);
+				}
+			});
+			dialog.show();
+		    return true;
+		}
+		if(item.getItemId()==R.id.action_help){//打开帮助界面
+			Intent intent=new Intent();
+			intent.setClass(UploadActivity.this, HelpActivity.class);
+			startActivity(intent);
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
 }

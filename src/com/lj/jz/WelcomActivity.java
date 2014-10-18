@@ -41,10 +41,10 @@ public class WelcomActivity extends Activity {
 		//启动更新服务
 		StaticParams.activity=this;//启动检查更新的服务的活动,必须设置，不然报错
 		StaticParams.CURRENT_PACKAGE="com.lj.jz";//app的包名,必须设置，不然报错
-		StaticParams.URL_VERSIONINFO="http://192.168.1.100:8080/testServer/version.txt";//版本信息访问地址
-		StaticParams.URL_UPDATEFILEPATH="http://192.168.43.162:8080/testServer/version.txt";//app下载地址
-		StaticParams.UPDATE_SOFTWARE_FILE_NAME="new.apk";//下载的最新app的保存的文件名
-		StaticParams.UPDATE_SOFTWARE_DIR_NAME="VersionT/";//下载的最新的app的保存目录		
+		StaticParams.URL_VERSIONINFO="http://121.40.148.140/ljjz/version.txt";//版本信息访问地址
+		StaticParams.URL_UPDATEFILEPATH="http://121.40.148.140/ljjz/ljjz.apk";//app下载地址
+		StaticParams.UPDATE_SOFTWARE_FILE_NAME="ljjz.apk";//下载的最新app的保存的文件名
+		StaticParams.UPDATE_SOFTWARE_DIR_NAME="ljjzV/";//下载的最新的app的保存目录		
 		Intent intent=new Intent();
 		//intent.setClass(getApplicationContext(), VersionService.class);
 		intent.setClass(getApplicationContext(), VersionServiceNew.class);//新版本

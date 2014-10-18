@@ -34,6 +34,7 @@
         <activity android:name="com.lj.jz.CsListActivity"></activity>
         <activity android:name="com.lj.jz.CsEditActivity"></activity>
         <activity android:name="com.lj.jz.SzActivity"></activity>
+        <activity android:name="com.lj.jz.HelpActivity"></activity>
         <service android:name="com.lj.jz.MakeBackupService"></service>
         <activity android:name="com.lj.version.v.VersionActivity"></activity>
         <service android:name="com.lj.version.v.VersionServiceNew"></service>
