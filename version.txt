@@ -1,0 +1,9 @@
+{
+"appName":"ljjz",
+"apkName":"jz.apk",   
+"apkSize":"1629183",   
+"verName":"1.00",   
+"verCode":"3",   
+"apkUrl":"http://121.40.148.140/ljjz/jz.apk",    
+"updateInfo":" 更新内容有<br/>1、测试1<br/>2、测试2<br/> "
+}
