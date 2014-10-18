@@ -1,5 +1,6 @@
 package com.lj.jz;
 
+import com.lj.jmad.ut.JMPManager;
 import com.lj.version.v.StaticParams;
 import com.lj.version.v.VersionServiceNew;
 
@@ -16,10 +17,15 @@ public class WelcomActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		//去掉标题
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);		
 		setContentView(R.layout.activity_welcom);
 		
+		//聚米广告
+		JMPManager adManager = JMPManager.getInstance(this, 1, "21c82518-6b62-4cf3-a3da-383667fe20f8", 6);
+	    //adManager.set("anzhuopingtai.pingtai", true, true);
+	    adManager.start();
+		
+		//自动更新服务
 		new Thread(new Runnable() {
 			
 			@Override
