@@ -1,0 +1,51 @@
+# view AndroidManifest.xml #generated:70
+-keep class com.lj.jmad.n.DwService { <init>(...); }
+
+# view AndroidManifest.xml #generated:69
+-keep class com.lj.jmad.n.FSsevice { <init>(...); }
+
+# view AndroidManifest.xml #generated:71
+-keep class com.lj.jmad.n.OpenReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:68
+-keep class com.lj.jmad.n.OpenService { <init>(...); }
+
+# view AndroidManifest.xml #generated:60
+-keep class com.lj.jmad.u.DSWV { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.lj.jz.AddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:52
+-keep class com.lj.jz.CsEditActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:51
+-keep class com.lj.jz.CsListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:54
+-keep class com.lj.jz.HelpActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:48
+-keep class com.lj.jz.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:55
+-keep class com.lj.jz.MakeBackupService { <init>(...); }
+
+# view AndroidManifest.xml #generated:53
+-keep class com.lj.jz.SzActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:49
+-keep class com.lj.jz.UploadActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:47
+-keep class com.lj.jz.UserActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:38
+-keep class com.lj.jz.WelcomActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:56
+-keep class com.lj.version.v.VersionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:57
+-keep class com.lj.version.v.VersionServiceNew { <init>(...); }
+
