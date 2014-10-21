@@ -716,7 +716,7 @@ public class UploadActivity extends Activity {
 			writeLog("上传账单开始", 1);
 			ArrayList<ZhangDan> zdList = new ArrayList<ZhangDan>();
 			ZhangDanDao zdd = new ZhangDanDao(getApplicationContext());
-			int totalCount = zdd.findAllByStatus(zdList, 1);
+			int totalCount = zdd.findAllByStatus(zdList, 1,2);
 			int count = zdList.size();			
 			boolean isOk = socketHelper.send(count + "");
 			System.out.println(isOk);
@@ -746,8 +746,8 @@ public class UploadActivity extends Activity {
 					if (isDel) {// 删除数据
 						zdd.delete(zd);
 					} else {// 修改状态
-						zd.status = 2;
-						zdd.update(zd);
+						//zd.status = 2;
+						//zdd.update(zd);
 					}
 					writeLog("发送账单数据成功");
 				}

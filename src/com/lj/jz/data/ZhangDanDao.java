@@ -20,6 +20,10 @@ public class ZhangDanDao {
 		return zdList;
 	}
 	//根据状态查询所有账单
+	public int findAllByStatus(List<ZhangDan> zhangDanList,int status,int status1){
+		return dh.getEntryList(zhangDanList, ZhangDan.class, "status=? or status=?", new String[]{String.valueOf(status),String.valueOf(status1)}, "num desc", 0, 0);
+	}
+	//根据状态查询所有账单
 	public int findAllByStatus(List<ZhangDan> zhangDanList,int status){
 		return dh.getEntryList(zhangDanList, ZhangDan.class, "status=?", new String[]{String.valueOf(status)}, "num desc", 0, 0);
 	}
